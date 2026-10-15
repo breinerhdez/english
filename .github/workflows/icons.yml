@@ -1,0 +1,28 @@
+name: Generar iconos PNG
+
+on:
+  push:
+    paths:
+      - "docs/icons/*.b64"
+      - ".github/workflows/icons.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  icons:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Convertir los .b64 en PNG
+        run: |
+          cd docs/icons
+          for f in *.b64; do base64 -d "$f" > "${f%.b64}"; done
+          ls -la
+      - name: Guardar los PNG en el repositorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/icons/*.png
+          git diff --cached --quiet || (git commit -m "Iconos PNG generados" && git pull --rebase && git push)
