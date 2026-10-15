@@ -1,0 +1,19 @@
+{
+  "name": "English Lab",
+  "short_name": "English Lab",
+  "description": "Plataforma para estudiar inglés: pronunciación con IPA y audio, vocabulario, gramática y el inglés del trabajo.",
+  "lang": "es",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#E9EEF3",
+  "theme_color": "#2F5FD0",
+  "categories": ["education"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
