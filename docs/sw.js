@@ -1,7 +1,7 @@
 // English Lab · service worker
 // Sube VERSION (v1 → v2…) cuando cambies los íconos o el manifest, o agregues archivos. Para index.html no hace falta.
-const VERSION = "v1.0.1";
-const APP = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-maskable.svg"];
+const VERSION = "v1.0.2";
+const APP = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/icon.svg"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(APP)).then(() => self.skipWaiting()));
